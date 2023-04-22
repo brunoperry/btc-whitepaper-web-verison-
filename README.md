@@ -1,11 +1,10 @@
 # HTML BTC Whitepaper
 
-![alt text](<data:image/svg+xml;charset=utf-8,%3Csvg%20height%3D%2264%22%20width%3D%2264%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cg%20transform%3D%22translate(0.00630876%2C-0.00301984)%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23f7931a%22%20d%3D%22m63.033%2C39.744c-4.274%2C17.143-21.637%2C27.576-38.782%2C23.301-17.138-4.274-27.571-21.638-23.295-38.78%2C4.272-17.145%2C21.635-27.579%2C38.775-23.305%2C17.144%2C4.274%2C27.576%2C21.64%2C23.302%2C38.784z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22m46.103%2C27.444c0.637-4.258-2.605-6.547-7.038-8.074l1.438-5.768-3.511-0.875-1.4%2C5.616c-0.923-0.23-1.871-0.447-2.813-0.662l1.41-5.653-3.509-0.875-1.439%2C5.766c-0.764-0.174-1.514-0.346-2.242-0.527l0.004-0.018-4.842-1.209-0.934%2C3.75s2.605%2C0.597%2C2.55%2C0.634c1.422%2C0.355%2C1.679%2C1.296%2C1.636%2C2.042l-1.638%2C6.571c0.098%2C0.025%2C0.225%2C0.061%2C0.365%2C0.117-0.117-0.029-0.242-0.061-0.371-0.092l-2.296%2C9.205c-0.174%2C0.432-0.615%2C1.08-1.609%2C0.834%2C0.035%2C0.051-2.552-0.637-2.552-0.637l-1.743%2C4.019%2C4.569%2C1.139c0.85%2C0.213%2C1.683%2C0.436%2C2.503%2C0.646l-1.453%2C5.834%2C3.507%2C0.875%2C1.439-5.772c0.958%2C0.26%2C1.888%2C0.5%2C2.798%2C0.726l-1.434%2C5.745%2C3.511%2C0.875%2C1.453-5.823c5.987%2C1.133%2C10.489%2C0.676%2C12.384-4.739%2C1.527-4.36-0.076-6.875-3.226-8.515%2C2.294-0.529%2C4.022-2.038%2C4.483-5.155zm-8.022%2C11.249c-1.085%2C4.36-8.426%2C2.003-10.806%2C1.412l1.928-7.729c2.38%2C0.594%2C10.012%2C1.77%2C8.878%2C6.317zm1.086-11.312c-0.99%2C3.966-7.1%2C1.951-9.082%2C1.457l1.748-7.01c1.982%2C0.494%2C8.365%2C1.416%2C7.334%2C5.553z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E>)
+![alt text](https://raw.githubusercontent.com/brunoperry/btc-whitepaper-web-verison-/main/images/btc_logo.png)
 
 HTML version for the Bitcoin Whitepaper by Satoshi Nakamoto.
 
-[Check it out](https://brunoperry.github.io/btc-whitepaper-web-verison-/).
-[Original version (pdf)](https://bitcoin.org/en/bitcoin-paper).
+[Check out the web version](https://brunoperry.github.io/btc-whitepaper-web-verison-/).
 
 ## Built With
 
@@ -15,6 +14,4 @@ HTML version for the Bitcoin Whitepaper by Satoshi Nakamoto.
 
 - **Bruno Perry** - [brunoperry.net](https://brunoperry.net)
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+[Original version (pdf)](https://bitcoin.org/en/bitcoin-paper).

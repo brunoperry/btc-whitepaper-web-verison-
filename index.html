@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bitcoin whitepaper">
     <title>Bitcoin - Whitepaper</title>
+    <link rel="icon" type="image/svg+xml" href="images/btc_logo.svg">
 
     <style>
         @font-face {
@@ -47,6 +48,7 @@
         html {
             height: 100%;
             width: 100%;
+            background-color: var(--text-color);
         }
 
         html,
@@ -62,9 +64,10 @@
         body {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: var(--padding);
+            padding: var(--padding) calc(var(--padding) + 15px);
             opacity: 0;
             transition: opacity var(--speed) ease-in-out;
+            background-color: white;
         }
 
         section {
@@ -83,7 +86,7 @@
         p {
             text-align: left;
             font-size: large;
-            line-height: 1.5;
+            line-height: 1.6;
             margin: 0;
         }
 
@@ -200,6 +203,10 @@
                 --padding: 10px;
                 --btc-icon-size: 48px;
                 --menu-padding: 20px;
+            }
+
+            body {
+                padding: var(--padding);
             }
         }
     </style>
