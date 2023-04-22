@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="100%"
+   height="100%"
+   viewBox="0 0 190 102"
+   version="1.1"
+   style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:1.5;"
+   id="svg8596">
+  <metadata
+     id="metadata8602">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8600" />
+  <rect
+     x="0"
+     y="0"
+     width="190.0005"
+     height="101.9997"
+     style="fill:none;stroke-width:1.19815"
+     id="rect4746" />
+  <text
+     x="12.779979"
+     y="19.965151"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+     id="text4748">Block Header</text>
+  <text
+     x="9.8649998"
+     y="12.14777"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+     id="text4752">Longest Proof-of-Work Chain</text>
+  <text
+     x="126.73941"
+     y="64.889862"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+     id="text4756">Merkle Branch for Tx3</text>
+  <text
+     x="18.983036"
+     y="26.556459"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+     id="text4768">Prev Hash</text>
+  <text
+     x="75.433113"
+     y="55.56015"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+     id="text4780">Hash 01</text>
+  <text
+     x="105.47133"
+     y="55.560158"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+     id="text4788">Hash 23</text>
+  <text
+     x="44.612038"
+     y="26.556459"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif;stroke-width:0.005;stroke-miterlimit:1.5;stroke-dasharray:none"
+     id="text4798">Nonce</text>
+  <text
+     x="27.397881"
+     y="35.556477"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+     id="text4806">Merkle Root</text>
+  <text
+     x="98.934158"
+     y="72.56015"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+     id="text4842">Hash2</text>
+  <text
+     x="115.80828"
+     y="89.560211"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+     id="text4850">Tx3</text>
+  <text
+     x="113.9724"
+     y="72.56015"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+     id="text4860">Hash3</text>
+  <g
+     id="g9343">
+    <path
+       d="m 87.217315,38.687884 1.745005,-0.687998 0.172001,1.866995 z"
+       style="fill:#505050"
+       id="path4876" />
+    <path
+       d="m 80.962296,50.999849 c 0,0 5.484016,-8.911974 7.371022,-11.977966"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path4878" />
+  </g>
+  <g
+     id="g9347">
+    <path
+       d="m 102.67479,39.868881 0.154,-1.868995 1.75101,0.670998 z"
+       style="fill:#505050"
+       id="path4884" />
+    <path
+       d="m 110.99982,50.999849 c 0,0 -5.60902,-8.922974 -7.53302,-11.983966"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path4886" />
+  </g>
+  <g
+     id="g9351">
+    <path
+       d="m 105.4433,59.043826 1.557,-1.043997 0.566,1.786995 z"
+       style="fill:#505050"
+       id="path4904" />
+    <path
+       d="m 103.50029,67.9998 c 0,0 2.18701,-6.248982 3.10401,-8.866974"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path4906" />
+  </g>
+  <g
+     id="g9355">
+    <path
+       d="m 114.43433,59.786824 0.566,-1.786995 1.557,1.043997 z"
+       style="fill:#505050"
+       id="path4912" />
+    <path
+       d="m 118.50034,67.9998 c 0,0 -2.18701,-6.248982 -3.10401,-8.866974"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path4914" />
+  </g>
+  <g
+     id="g9359">
+    <path
+       d="m 117.37533,76.499776 1.12501,-1.499996 1.125,1.499996 z"
+       style="fill:#505050"
+       id="path4920" />
+    <path
+       d="M 118.50034,84.999752 V 76.199777"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path4922" />
+  </g>
+  <g
+     id="g9331">
+    <path
+       d="m 11.1,24.375233 1.5,1.125 -1.5,1.125 z"
+       style="fill:#505050"
+       id="path4936" />
+    <path
+       d="m 5,25.500233 h 6.8"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path4938" />
+  </g>
+  <rect
+     style="opacity:1;fill:none;fill-opacity:1;stroke:#505050;stroke-width:0.478162;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8604"
+     width="25.521839"
+     height="6.5218382"
+     x="12.99319"
+     y="22.239313" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.49372;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8604-1"
+     width="15.50628"
+     height="6.5062804"
+     x="41.187679"
+     y="22.247093" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.420654;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8604-8"
+     width="19.579346"
+     height="6.5793467"
+     x="25.801184"
+     y="31.210548" />
+  <rect
+     style="opacity:1;fill:none;fill-opacity:1;stroke:#505050;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8655"
+     width="49.480682"
+     height="25.480684"
+     x="10.009693"
+     y="15.009613" />
+  <text
+     x="72.770355"
+     y="19.955494"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-miterlimit:1.5"
+     id="text4748-9">Block Header</text>
+  <text
+     x="78.973412"
+     y="26.546803"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-miterlimit:1.5"
+     id="text4768-7">Prev Hash</text>
+  <text
+     x="104.60241"
+     y="26.546803"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-width:0.005;stroke-miterlimit:1.5;stroke-dasharray:none"
+     id="text4798-1">Nonce</text>
+  <text
+     x="87.38826"
+     y="35.546818"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-miterlimit:1.5"
+     id="text4806-7">Merkle Root</text>
+  <g
+     id="g9335">
+    <path
+       d="m 71.090551,24.365575 1.5,1.125 -1.5,1.125 z"
+       style="clip-rule:evenodd;fill:#505050;fill-rule:evenodd;stroke-miterlimit:1.5"
+       id="path4936-2" />
+    <path
+       d="M 59.472746,25.490575 H 71.790551"
+       style="clip-rule:evenodd;fill:none;fill-rule:evenodd;stroke:#505050;stroke-width:0.5px;stroke-miterlimit:1.5"
+       id="path4938-4" />
+  </g>
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.478162;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8604-4"
+     width="25.521839"
+     height="6.5218382"
+     x="72.983742"
+     y="22.229656" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.49372;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8604-1-4"
+     width="15.50628"
+     height="6.5062804"
+     x="101.17823"
+     y="22.237434" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.420654;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8604-8-3"
+     width="19.579346"
+     height="6.5793467"
+     x="85.791733"
+     y="31.20089" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8655-3"
+     width="49.480682"
+     height="25.480684"
+     x="70.000244"
+     y="14.999955" />
+  <text
+     x="132.77031"
+     y="19.955494"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-miterlimit:1.5"
+     id="text4748-9-2">Block Header</text>
+  <text
+     x="138.97336"
+     y="26.546803"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-miterlimit:1.5"
+     id="text4768-7-7">Prev Hash</text>
+  <text
+     x="164.60236"
+     y="26.546803"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-width:0.005;stroke-miterlimit:1.5;stroke-dasharray:none"
+     id="text4798-1-9">Nonce</text>
+  <text
+     x="147.38821"
+     y="35.546818"
+     style="font-size:3px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-miterlimit:1.5"
+     id="text4806-7-2">Merkle Root</text>
+  <g
+     id="g9339">
+    <path
+       d="m 131.09068,24.365575 1.5,1.125 -1.5,1.125 z"
+       style="clip-rule:evenodd;fill:#505050;fill-rule:evenodd;stroke-miterlimit:1.5"
+       id="path4936-2-5" />
+    <path
+       d="m 119.47288,25.490575 h 12.3178"
+       style="clip-rule:evenodd;fill:none;fill-rule:evenodd;stroke:#505050;stroke-width:0.5px;stroke-miterlimit:1.5"
+       id="path4938-4-6" />
+  </g>
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.478162;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8604-4-1"
+     width="25.521839"
+     height="6.5218382"
+     x="132.98387"
+     y="22.229656" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.49372;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8604-1-4-0"
+     width="15.50628"
+     height="6.5062804"
+     x="161.17836"
+     y="22.237434" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.420654;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8604-8-3-1"
+     width="19.579346"
+     height="6.5793467"
+     x="145.79185"
+     y="31.200891" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8655-3-2"
+     width="49.480682"
+     height="25.480684"
+     x="130.00037"
+     y="14.999955" />
+  <rect
+     style="opacity:1;fill:none;fill-opacity:1;stroke:#505050;stroke-width:0.492704;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8775"
+     width="13.507296"
+     height="6.5072961"
+     x="74.113541"
+     y="51.246525" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.492704;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8775-7"
+     width="13.507296"
+     height="6.5072961"
+     x="96.559967"
+     y="68.245743" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.492704;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+     id="rect8775-7-6"
+     width="13.507296"
+     height="6.5072961"
+     x="111.52335"
+     y="85.247131" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.492704;stroke-miterlimit:1.5;stroke-dasharray:0.492704, 0.492704;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect8775-7-6-2"
+     width="13.507296"
+     height="6.5072961"
+     x="111.60924"
+     y="68.247208" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.492704;stroke-miterlimit:1.5;stroke-dasharray:0.492704, 0.492704;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect8775-7-6-2-8"
+     width="13.507296"
+     height="6.5072961"
+     x="104.35922"
+     y="51.247215" />
+</svg>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="100%"
+   height="100%"
+   viewBox="0 0 150 60"
+   version="1.1"
+   xml:space="preserve"
+   style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:1.5;"
+   id="svg6593"><metadata
+   id="metadata6599"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs6597">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+            
+        
+            
+            
+        
+                
+            
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+        
+                
+                
+            
+            
+        
+            
+        
+                
+            
+                
+            
+            
+        
+            
+        </defs>
+    <rect
+   x="0"
+   y="0"
+   width="150"
+   height="60.000031"
+   style="fill:none;stroke-width:0.816497;opacity:1"
+   id="rect6458" /><text
+   x="9.9293985"
+   y="33.147808"
+   style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+   id="text6466">New Privacy Model</text><g
+   transform="translate(0.373336,-0.81770705)"
+   id="g6500">
+                <text
+   x="69.074997"
+   y="20.527"
+   style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+   id="text6496">T<tspan
+   x="70.795998 71.794998"
+   y="20.527 20.527"
+   id="tspan6494">ru</tspan>sted</text>
+                <text
+   x="66.768997"
+   y="23.625"
+   style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+   id="text6498">Third Party</text>
+            </g><text
+   x="70.392334"
+   y="43.556477"
+   style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+   id="text6508">Public</text><text
+   x="92.807297"
+   y="21.276674"
+   style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+   id="text6516">Counterparty</text><text
+   x="124.3923"
+   y="21.276674"
+   style="font-size:3px;font-family:ArialMT, Arial, sans-serif"
+   id="text6526">Public</text><g
+   id="g7272"><path
+     d="M 62.5,21.625 64,20.5 62.5,19.375 Z"
+     style="fill:#505050"
+     id="path6556" /><path
+     d="m 58,20.5 h 4.8"
+     style="fill:none;stroke:#505050;stroke-width:0.5px"
+     id="path6558" /></g><g
+   transform="translate(53,17.500009)"
+   id="g6570"
+   style="opacity:1">
+            <g
+   transform="translate(-53,-17.5)"
+   id="g6568">
+                <path
+   d="M 62.5,41.375 64,42.5 62.5,43.625 Z"
+   style="fill:#505050"
+   id="path6564" />
+                <path
+   d="m 58,42.5 h 4.8"
+   style="fill:none;stroke:#505050;stroke-width:0.5px"
+   id="path6566" />
+            </g>
+        </g><g
+   transform="translate(80,-4.5000022)"
+   id="g6578"
+   style="opacity:1">
+            <g
+   transform="translate(-80,4.5)"
+   id="g6576">
+                <path
+   d="M 89.5,19.375 91,20.5 89.5,21.625 Z"
+   style="fill:#505050"
+   id="path6572" />
+                <path
+   d="m 85,20.5 h 4.8"
+   style="fill:none;stroke:#505050;stroke-width:0.50000000000000000px"
+   id="path6574" />
+            </g>
+        </g><path
+   d="M 115,13.999999 V 27.999998"
+   style="fill:none;stroke:#505050;stroke-width:0.5px"
+   id="path6580" /><path
+   d="m 34,36.000009 v 14"
+   style="fill:none;stroke:#505050;stroke-width:0.5px"
+   id="path6584" />
+<rect
+   style="opacity:1;fill:none;fill-opacity:1;stroke:#505050;stroke-width:0.5;stroke-opacity:1;stroke-miterlimit:1.5;stroke-dasharray:none"
+   id="rect6896"
+   width="20.999992"
+   height="7"
+   x="9.9999962"
+   y="16.999998" /><text
+   x="20.417961"
+   y="21.55615"
+   style="font-size:3px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-miterlimit:1.5"
+   id="text6472-4"><tspan
+     style="text-align:center;text-anchor:middle"
+     id="tspan7016">Identities</tspan></text><rect
+   style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.5;stroke-miterlimit:1.5;stroke-opacity:1;stroke-dasharray:none"
+   id="rect6896-5"
+   width="20.999992"
+   height="7"
+   x="37.000004"
+   y="16.999998" /><text
+   x="47.417969"
+   y="21.55615"
+   style="font-size:3px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-miterlimit:1.5"
+   id="text6472-4-5"><tspan
+     style="text-align:center;text-anchor:middle"
+     id="tspan7016-1">Transactions</tspan></text><text
+   x="26.673368"
+   y="12.14569"
+   style="font-size:3px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-miterlimit:1.5"
+   id="text6472-4-5-0"><tspan
+     style="text-align:center;text-anchor:middle"
+     id="tspan7016-1-1">Traditional Privacy Model</tspan></text><rect
+   style="opacity:1;fill:none;fill-opacity:1;stroke:#505050;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+   id="rect7063"
+   width="20.230787"
+   height="9.786787"
+   x="64.519211"
+   y="15.606605" /><rect
+   style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+   id="rect7063-6"
+   width="20.230787"
+   height="9.786787"
+   x="91.43116"
+   y="15.606914" /><rect
+   style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+   id="rect7063-6-5"
+   width="20.230787"
+   height="9.786787"
+   x="118.46855"
+   y="15.327128" /><rect
+   style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+   id="rect6896-0"
+   width="20.999992"
+   height="7"
+   x="9.9999962"
+   y="39.000008" /><rect
+   style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+   id="rect6896-5-1"
+   width="20.999992"
+   height="7"
+   x="37.000004"
+   y="39.000008" /><text
+   x="20.417961"
+   y="43.55616"
+   style="font-size:3px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-miterlimit:1.5"
+   id="text6472-4-55"><tspan
+     style="text-align:center;text-anchor:middle"
+     id="tspan7016-4">Identities</tspan></text><text
+   x="47.522705"
+   y="43.55616"
+   style="font-size:3px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-miterlimit:1.5"
+   id="text6472-4-5-5"><tspan
+     style="text-align:center;text-anchor:middle"
+     id="tspan7016-1-5">Transactions</tspan></text><rect
+   style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+   id="rect7063-5"
+   width="20.230787"
+   height="9.786787"
+   x="64.46859"
+   y="37.606613" /><path
+   style="fill:#505050;fill-opacity:1;stroke:#505050;stroke-width:0.530935;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-opacity:1"
+   d="m 31,20.499998 h 6"
+   id="path7239" /></svg>

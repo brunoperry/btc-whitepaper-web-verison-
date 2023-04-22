@@ -1,0 +1,487 @@
+<svg width="100%"
+   height="100%"
+   viewBox="0 0 160 117">
+  <g
+     id="g10364">
+    <path
+       d="m 139.21939,78.501659 1.12501,-1.5 1.125,1.5 z"
+       style="clip-rule:evenodd;fill:#505050;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+       id="path3929-8" />
+    <path
+       d="M 140.3444,87.001662 V 78.201659"
+       style="clip-rule:evenodd;fill:none;fill-rule:evenodd;stroke:#505050;stroke-width:0.500001px;stroke-miterlimit:1.5"
+       id="path3931-5" />
+  </g>
+  <text
+     x="11.780045"
+     y="14.147797"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3607">Block</text>
+  <text
+     x="19.280005"
+     y="20.965185"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3615">Block Header (Block Hash)</text>
+  <text
+     x="16.933439"
+     y="106.36915"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3627">T<tspan
+   x="18.654442 19.654444"
+   y="106.36915 106.36915"
+   id="tspan3623"
+   style="stroke-width:1">ra</tspan>nsactions Hashed in a Merkle T<tspan
+   x="63.175522 64.175522"
+   y="106.36915 106.36915"
+   id="tspan3625"
+   style="stroke-width:1">re</tspan>e</text>
+  <text
+     x="95.044945"
+     y="106.36915"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3631">After Pruning Tx0-2 from the Block</text>
+  <text
+     x="25.483122"
+     y="28.056503"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3635">Prev Hash</text>
+  <text
+     x="21.4715"
+     y="57.560295"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3643">Hash 01</text>
+  <text
+     x="51.509846"
+     y="57.560295"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3661">Hash 23</text>
+  <text
+     x="52.112087"
+     y="28.056503"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3681">Nonce</text>
+  <text
+     x="34.89695"
+     y="37.556538"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3689">Root Hash</text>
+  <text
+     x="14.934102"
+     y="74.560181"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3721">Hash0</text>
+  <text
+     x="44.97245"
+     y="74.560181"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3725">Hash2</text>
+  <text
+     x="16.770185"
+     y="91.560341"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3745">Tx0</text>
+  <text
+     x="46.80851"
+     y="91.560341"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3755">Tx2</text>
+  <text
+     x="31.808495"
+     y="91.560341"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3765">Tx1</text>
+  <text
+     x="61.846821"
+     y="91.560341"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3775">Tx3</text>
+  <text
+     x="29.972422"
+     y="74.560181"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3795">Hash1</text>
+  <text
+     x="60.010777"
+     y="74.560181"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;stroke-width:1"
+     id="text3799">Hash3</text>
+  <g
+     id="g10420">
+    <path
+       d="M 33.256,40.688 35,40 l 0.172,1.867 z"
+       style="fill:#505050"
+       id="path3827" />
+    <path
+       d="m 27,53 c 0,0 5.484,-8.912 7.371,-11.978"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path3829" />
+  </g>
+  <g
+     id="g10429">
+    <path
+       d="M 48.713,41.869 48.867,40 l 1.751,0.671 z"
+       style="fill:#505050"
+       id="path3841" />
+    <path
+       d="m 57.038,53 c 0,0 -5.608,-8.923 -7.532,-11.984"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path3843" />
+  </g>
+  <g
+     id="g10435">
+    <path
+       d="M 21.443,61.044 23,60 l 0.566,1.787 z"
+       style="fill:#505050"
+       id="path3865" />
+    <path
+       d="m 19.5,70 c 0,0 2.187,-6.249 3.104,-8.867"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path3867" />
+  </g>
+  <g
+     id="g10450">
+    <path
+       d="M 51.481,61.044 53.038,60 l 0.567,1.787 z"
+       style="fill:#505050"
+       id="path3871" />
+    <path
+       d="m 49.538,70 c 0,0 2.187,-6.249 3.104,-8.867"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path3873" />
+  </g>
+  <g
+     id="g10441">
+    <path
+       d="M 30.434,61.787 31,60 l 1.557,1.044 z"
+       style="fill:#505050"
+       id="path3887" />
+    <path
+       d="m 34.5,70 c 0,0 -2.187,-6.249 -3.104,-8.867"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path3889" />
+  </g>
+  <g
+     id="g10459">
+    <path
+       d="M 60.472,61.787 61.038,60 l 1.558,1.044 z"
+       style="fill:#505050"
+       id="path3893" />
+    <path
+       d="m 64.538,70 c 0,0 -2.187,-6.249 -3.103,-8.867"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path3895" />
+  </g>
+  <g
+     id="g10489">
+    <path
+       d="m 18.337,78.5 1.125,-1.5 1.125,1.5 z"
+       style="fill:#505050"
+       id="path3909" />
+    <path
+       d="M 19.462,87 V 78.2"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path3911" />
+  </g>
+  <g
+     id="g10477">
+    <path
+       d="M 48.375,78.5 49.5,77 l 1.125,1.5 z"
+       style="fill:#505050"
+       id="path3915" />
+    <path
+       d="M 49.5,87 V 78.2"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path3917" />
+  </g>
+  <g
+     id="g10483">
+    <path
+       d="M 33.375,78.5 34.5,77 l 1.125,1.5 z"
+       style="fill:#505050"
+       id="path3923" />
+    <path
+       d="M 34.5,87 V 78.2"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path3925" />
+  </g>
+  <g
+     id="g10468">
+    <path
+       d="m 63.413,78.5 1.125,-1.5 1.125,1.5 z"
+       style="fill:#505050"
+       id="path3929" />
+    <path
+       d="M 64.538,87 V 78.2"
+       style="fill:none;stroke:#505050;stroke-width:0.5px"
+       id="path3931" />
+  </g>
+  <rect
+     style="opacity:1;fill:none;fill-opacity:1;stroke:#505050;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9896"
+     width="63.503323"
+     height="89.503319"
+     x="10.194045"
+     y="9.9985638" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.496403;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9896-2"
+     width="50.503597"
+     height="26.503597"
+     x="16.620611"
+     y="16.120417" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.485764;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9896-2-5"
+     width="25.514236"
+     height="6.5142365"
+     x="19.747057"
+     y="23.743193" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.494024;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9896-2-5-7"
+     width="15.505978"
+     height="6.5059762"
+     x="48.749321"
+     y="23.747322" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.496485;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9896-2-5-7-2"
+     width="19.503515"
+     height="6.5035152"
+     x="32.250488"
+     y="33.248577" />
+  <rect
+     style="opacity:1;fill:none;fill-opacity:1;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:0.498169, 0.498169;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963"
+     width="12.501832"
+     height="6.5018311"
+     x="20.654493"
+     y="53.249443" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:0.498169, 0.498169;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-8"
+     width="12.501832"
+     height="6.5018311"
+     x="50.900177"
+     y="53.250175" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:0.498169, 0.498169;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-8-9"
+     width="12.501832"
+     height="6.5018311"
+     x="13.069695"
+     y="70.249344" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:0.498169, 0.498169;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-8-0"
+     width="12.501832"
+     height="6.5018311"
+     x="27.904423"
+     y="70.248611" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:0.498169, 0.498169;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-8-3"
+     width="12.501832"
+     height="6.5018311"
+     x="43.100758"
+     y="70.248611" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:0.498169, 0.498169;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-8-6"
+     width="12.501832"
+     height="6.5018311"
+     x="58.150097"
+     y="70.250076" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-8-9-0"
+     width="12.501832"
+     height="6.5018311"
+     x="12.983916"
+     y="87.249413" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-8-9-0-3"
+     width="12.501832"
+     height="6.5018311"
+     x="27.818642"
+     y="87.231102" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-8-9-0-39"
+     width="12.501832"
+     height="6.5018311"
+     x="43.01498"
+     y="87.231102" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-8-9-0-0"
+     width="12.501832"
+     height="6.5018311"
+     x="58.064308"
+     y="87.250145" />
+  <text
+     x="87.586136"
+     y="14.149432"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+     id="text3607-3">Block</text>
+  <text
+     x="95.086098"
+     y="20.96682"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+     id="text3615-4">Block Header (Block Hash)</text>
+  <text
+     x="101.28922"
+     y="28.058138"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+     id="text3635-8">Prev Hash</text>
+  <text
+     x="97.277542"
+     y="57.561932"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+     id="text3643-2">Hash 01</text>
+  <text
+     x="127.31589"
+     y="57.561932"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+     id="text3661-8">Hash 23</text>
+  <text
+     x="127.91818"
+     y="28.058138"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+     id="text3681-4">Nonce</text>
+  <text
+     x="110.70305"
+     y="37.558174"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+     id="text3689-9">Root Hash</text>
+  <text
+     x="120.77854"
+     y="74.561813"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+     id="text3725-3">Hash2</text>
+  <text
+     x="137.65286"
+     y="91.561974"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+     id="text3775-2">Tx3</text>
+  <text
+     x="135.81688"
+     y="74.561813"
+     style="font-size:3.00001px;font-family:ArialMT, Arial, sans-serif;clip-rule:evenodd;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+     id="text3799-0">Hash3</text>
+  <g
+     id="g10388">
+    <path
+       d="m 109.0622,40.689636 1.744,-0.688 0.172,1.867 z"
+       style="clip-rule:evenodd;fill:#505050;fill-rule:evenodd;stroke-miterlimit:1.5"
+       id="path3827-0" />
+    <path
+       d="m 102.8062,53.001636 c 0,0 5.484,-8.912 7.371,-11.978"
+       style="clip-rule:evenodd;fill:none;fill-rule:evenodd;stroke:#505050;stroke-width:0.5px;stroke-miterlimit:1.5"
+       id="path3829-4" />
+  </g>
+  <g
+     id="g10382">
+    <path
+       d="m 124.51935,41.870648 0.154,-1.869 1.75101,0.671 z"
+       style="clip-rule:evenodd;fill:#505050;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+       id="path3841-0" />
+    <path
+       d="m 132.84438,53.001652 c 0,0 -5.60802,-8.923003 -7.53203,-11.984004"
+       style="clip-rule:evenodd;fill:none;fill-rule:evenodd;stroke:#505050;stroke-width:0.500001px;stroke-miterlimit:1.5"
+       id="path3843-7" />
+  </g>
+  <g
+     id="g10376">
+    <path
+       d="m 127.28736,61.045654 1.557,-1.044 0.567,1.787 z"
+       style="clip-rule:evenodd;fill:#505050;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+       id="path3871-3" />
+    <path
+       d="m 125.34435,70.001657 c 0,0 2.18701,-6.249002 3.10401,-8.867003"
+       style="clip-rule:evenodd;fill:none;fill-rule:evenodd;stroke:#505050;stroke-width:0.500001px;stroke-miterlimit:1.5"
+       id="path3873-5" />
+  </g>
+  <g
+     id="g10370">
+    <path
+       d="m 136.27838,61.788654 0.56601,-1.787 1.558,1.044 z"
+       style="clip-rule:evenodd;fill:#505050;fill-rule:evenodd;stroke-width:1;stroke-miterlimit:1.5"
+       id="path3893-8" />
+    <path
+       d="m 140.3444,70.001657 c 0,0 -2.18701,-6.249002 -3.10301,-8.867003"
+       style="clip-rule:evenodd;fill:none;fill-rule:evenodd;stroke:#505050;stroke-width:0.500001px;stroke-miterlimit:1.5"
+       id="path3895-4" />
+  </g>
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.5;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9896-5"
+     width="63.503323"
+     height="89.503319"
+     x="86.000244"
+     y="10.0002" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.496403;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9896-2-6"
+     width="50.503597"
+     height="26.503597"
+     x="92.426811"
+     y="16.122053" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.485764;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9896-2-5-3"
+     width="25.514236"
+     height="6.5142365"
+     x="95.553261"
+     y="23.744829" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.494024;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9896-2-5-7-9"
+     width="15.505978"
+     height="6.5059762"
+     x="124.55552"
+     y="23.748957" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.496485;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9896-2-5-7-2-2"
+     width="19.503515"
+     height="6.5035152"
+     x="108.05669"
+     y="33.250214" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-4"
+     width="12.501832"
+     height="6.5018311"
+     x="96.460693"
+     y="53.251076" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:0.498169, 0.498169;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-8-8"
+     width="12.501832"
+     height="6.5018311"
+     x="126.70638"
+     y="53.251808" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-8-3-2"
+     width="12.501832"
+     height="6.5018311"
+     x="118.90696"
+     y="70.250244" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:0.498169, 0.498169;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-8-6-3"
+     width="12.501832"
+     height="6.5018311"
+     x="133.9563"
+     y="70.251709" />
+  <rect
+     style="clip-rule:evenodd;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#505050;stroke-width:0.498169;stroke-miterlimit:1.5;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="rect9963-8-9-0-0-0"
+     width="12.501832"
+     height="6.5018311"
+     x="133.8705"
+     y="87.25177" />
+</svg>

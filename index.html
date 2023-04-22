@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bitcoin whitepaper">
+    <title>Bitcoin - Whitepaper</title>
+
+    <style>
+        @font-face {
+            font-family: "Titillium Web";
+            src: url("font/TitilliumWeb-Regular.eot");
+            src: url("font/TitilliumWeb-Regular.eot?#iefix") format("embedded-opentype"),
+                url("font/TitilliumWeb-Regular.ttf") format("truetype"),
+                url("font/TitilliumWeb-Regular.svg#TitilliumWeb-Regular") format("svg");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "Titillium Web";
+            src: url("font/TitilliumWeb-Bold.eot");
+            src: url("font/TitilliumWeb-Bold.eot?#iefix") format("embedded-opentype"),
+                url("font/TitilliumWeb-Bold.ttf") format("truetype"),
+                url("font/TitilliumWeb-Bold.svg#TitilliumWeb-Bold") format("svg");
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        :root {
+            --font-family: "Titillium Web", Arial, sans-serif;
+            --text-color: #4d5060;
+            --code-color: #e4e4e4;
+            --orange-color: #fc8e08;
+            --max-width: 800px;
+            --padding: 20px;
+            --stroke-color: #505050;
+            --stroke-width: 0.5px;
+            --speed: 0.2s;
+            --white-color: #ffffff;
+            --btc-icon-size: 64px;
+            --menu-padding: 40px;
+        }
+
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        html,
+        body {
+            position: relative;
+            font-family: var(--font-family);
+            color: var(--text-color);
+            padding: 0;
+            margin: 0;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+        }
+
+        body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--padding);
+            opacity: 0;
+            transition: opacity var(--speed) ease-in-out;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            margin-top: 32px;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: left;
+            font-size: large;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        a {
+            word-wrap: break-word;
+            color: var(--orange-color);
+            text-decoration: none;
+            opacity: 0.8;
+        }
+
+        #tag {
+            position: relative;
+            margin: 0 auto;
+            bottom: var(--padding);
+        }
+
+        #tag a,
+        #tag a:visited {
+            color: var(--text-color);
+            opacity: 0.5;
+            text-decoration: none;
+        }
+
+        ol {
+            display: block;
+            list-style-type: none;
+            counter-reset: list;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 36px;
+        }
+
+        ol li:before {
+            counter-increment: list;
+            content: counters(list, ".") ") ";
+        }
+
+        ol.ref li:before {
+            content: "[" counters(list, ".") "] ";
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: var(--menu-padding);
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: large;
+        }
+
+        pre {
+            background-color: var(--code-color);
+            overflow-x: scroll;
+        }
+
+        #menu {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            max-width: var(--max-width);
+            inset: 0;
+            pointer-events: none;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #menu-container {
+            pointer-events: initial;
+            position: absolute;
+            inset: 0;
+            transform: translateX(-100%);
+            transition: transform var(--speed) ease-in-out;
+            background-color: var(--white-color);
+        }
+
+        #menu-button {
+            pointer-events: initial;
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            bottom: var(--padding);
+            right: var(--padding);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            width: var(--btc-icon-size);
+            height: var(--btc-icon-size);
+            opacity: 0.8;
+        }
+
+        #menu-button:active {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .code {
+            line-height: 1.4;
+            font-size: larger;
+        }
+
+        .samp {
+            font-size: larger;
+        }
+
+        .tab {
+            margin-right: 10px;
+        }
+
+        @media screen and (max-width: 480px) {
+            :root {
+                --padding: 10px;
+                --btc-icon-size: 48px;
+                --menu-padding: 20px;
+            }
+        }
+    </style>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
+            "HTML-CSS": {
+                linebreaks: { automatic: true, width: "container" }          
+            }              
+        });
+        </script>
+</head>
+
+<body>
+
+    <h1>Bitcoin: A Peer-to-Peer Electronic Cash System</h1>
+
+    <section>
+        <span>Satoshi Nakamoto</span><br>
+        <span><a href="mailto:satoshin@gmx.com" target="_blank">satoshin@gmx.com</a></span><br>
+        <span><a href="https://www.bitcoin.org">www.bitcoin.org</a></span>
+
+    </section>
+
+    <section>
+        <p><span><b>Abstract.</b></span> A purely peer-to-peer version of electronic cash would allow online
+            payments to be sent directly from one party to another without going through a
+            financial institution. Digital signatures provide part of the solution, but the main
+            benefits are lost if a trusted third party is still required to prevent double-spending.
+            We propose a solution to the double-spending problem using a peer-to-peer network.
+            The network timestamps transactions by hashing them into an ongoing chain of
+            hash-based proof-of-work, forming a record that cannot be changed without redoing
+            the proof-of-work. The longest chain not only serves as proof of the sequence of
+            events witnessed, but proof that it came from the largest pool of CPU power. As
+            long as a majority of CPU power is controlled by nodes that are not cooperating to
+            attack the network, they'll generate the longest chain and outpace attackers. The
+            network itself requires minimal structure. Messages are broadcast on a best effort
+            basis, and nodes can leave and rejoin the network at will, accepting the longest
+            proof-of-work chain as proof of what happened while they were gone.
+        </p>
+    </section>
+
+    <section id="introduction">
+        <h2>1. Introduction</h2>
+        <p>Commerce on the Internet has come to rely almost exclusively on financial institutions serving as
+            trusted third parties to process electronic payments. While the system works well enough for
+            most transactions, it still suffers from the inherent weaknesses of the trust based model.
+            Completely non-reversible transactions are not really possible, since financial institutions cannot
+            avoid mediating disputes. The cost of mediation increases transaction costs, limiting the
+            minimum practical transaction size and cutting off the possibility for small casual transactions,
+            and there is a broader cost in the loss of ability to make non-reversible payments for nonreversible
+            services.<br>
+            With the possibility of reversal, the need for trust spreads. Merchants must
+            be wary of their customers, hassling them for more information than they would otherwise need.
+            A certain percentage of fraud is accepted as unavoidable. These costs and payment uncertainties
+            can be avoided in person by using physical currency, but no mechanism exists to make payments
+            over a communications channel without a trusted party.<br>
+            What is needed is an electronic payment system based on cryptographic proof instead of trust,
+            allowing any two willing parties to transact directly with each other without the need for a trusted
+            third party. Transactions that are computationally impractical to reverse would protect sellers
+            from fraud, and routine escrow mechanisms could easily be implemented to protect buyers. In
+            this paper, we propose a solution to the double-spending problem using a peer-to-peer distributed
+            timestamp server to generate computational proof of the chronological order of transactions. The
+            system is secure as long as honest nodes collectively control more CPU power than any
+            cooperating group of attacker nodes.
+        </p>
+    </section>
+
+    <section id="transactions">
+        <h2>2. Transactions</h2>
+        <p>We define an electronic coin as a chain of digital signatures. Each owner transfers the coin to the
+            next by digitally signing a hash of the previous transaction and the public key of the next owner
+            and adding these to the end of the coin. A payee can verify the signatures to verify the chain of
+            ownership.
+        </p>
+        <svg width="100%" height="100%" viewBox="0 0 150 80">
+
+            <g style="font-size:3px;font-family:var(--font-family);text-align:center">
+
+                <text x="111.9296" y="14.965151">Transaction</text>
+                <text x="118.1925" y="21.728334">Owner 3's</text>
+                <text x="117.8105" y="24.826334">Public Key</text>
+                <text x="118.1925" y="52.728336">Owner 2's</text>
+                <text x="118.4765" y="55.826336">Signature</text>
+                <text x="118.1925" y="67.72834">Owner 3's</text>
+                <text x="117.2275" y="70.82634">Private Key</text>
+                <text x="121.4804" y="39.05629">Hash</text>
+                <text x="11.9296" y="15.021302">Transaction</text>
+                <text x="61.929596" y="14.965151">Transaction</text>
+                <text x="105.26046" y="10.932714" transform="rotate(18.442826)">Verify</text>
+                <text x="72.337334" y="92.308945"
+                    transform="matrix(0.94887418,-0.31564832,0.31564839,0.9488783,0,0)">Sign</text>
+                <text x="38.220001" y="10.969" transform="rotate(18.442826,-58.408262,52.499686)">Verify</text>
+                <text x="38.220001" y="10.969"
+                    transform="matrix(0.948876,-0.31564893,0.315649,0.94888012,8.04785,66.412631)">Sign</text>
+                <text x="18.192499" y="21.784485">Owner 1's</text>
+                <text x="17.810499" y="24.882484">Public Key</text>
+                <text x="68.192451" y="21.728334">Owner 2's</text>
+                <text x="67.810448" y="24.826334">Public Key</text>
+                <text x="18.192499" y="52.784515">Owner 0's</text>
+                <text x="18.4765" y="55.882515">Signature</text>
+                <text x="68.192451" y="52.728336">Owner 1's</text>
+                <text x="68.476448" y="55.826336">Signature</text>
+                <text x="18.192499" y="67.784515">Owner 1's</text>
+                <text x="17.227499" y="70.882515">Private Key</text>
+                <text x="68.192451" y="67.72834">Owner 2's</text>
+                <text x="67.227448" y="70.82634">Private Key</text>
+                <text x="21.480398" y="39.112442">Hash</text>
+                <text x="71.4804" y="39.05629">Hash</text>
+            </g>
+
+            <g fill="var(--orange-color)">
+
+                <path d="M 131.125,33.5 130,35 128.875,33.5 Z" />
+                <path d="M 126.225,46.5 125.1,48 123.975,46.5 Z" />
+                <path d="m 121.125,33.556027 -1.125,1.5 -1.125,-1.5 z" />
+                <path d="m 112.443,49.507027 1.057,1.549 -1.783,0.581 z" />
+                <path d="m 111.721,55.463026 1.779,0.593 -1.067,1.542 z" />
+                <path d="m 31.125,33.556027 -1.125,1.5 -1.125,-1.5 z" />
+                <path d="M 81.125,33.5 80,35 78.875,33.5 Z" />
+                <path d="m 26.225,46.556 -1.125,1.5 -1.125,-1.5 z" />
+                <path d="M 76.225,46.5 75.1,48 73.975,46.5 Z" />
+                <path d="m 21.125,33.556027 -1.125,1.5 -1.125,-1.5 z" />
+                <path d="m 71.125,33.556027 -1.125,1.5 -1.125,-1.5 z" />
+                <path d="m 62.443,49.507027 1.057,1.549 -1.783,0.581 z" />
+                <path d="m 61.721,55.463026 1.779,0.593 -1.067,1.542 z" />
+            </g>
+
+            <g fill="none" stroke-width="var(--stroke-width)" stroke="var(--orange-color)">
+                <path d="m 130,28 v 5.8" />
+                <path d="m 125.1,41 v 5.8" />
+                <path d="M 89.536219,31.056027 H 120 v 2.8" />
+                <path d="m 30,28.056027 v 5.8" />
+                <path d="m 80,28 v 5.8" />
+                <path d="m 25.1,41.056 v 5.8" />
+                <path d="m 75.1,41 v 5.8" />
+                <path d="m 6,31.056027 h 14 v 2.8" />
+                <path d="m 40,31.056027 h 30 v 2.8" />
+
+                <g stroke-dasharray="0.4,0.4" stroke-dashoffset="0">
+                    <path d="m 84,28.056027 v 12.944 c 0,0 22.947,7.822 28.364,9.669" />
+                    <path d="m 86.5,65.056027 c 0,0 20.73,-6.910001 25.862,-8.620001" />
+                    <path d="m 34,28.056027 v 12.944 c 0,0 22.947,7.822 28.364,9.669" />
+                    <path d="m 36.5,65.056027 c 0,0 20.73,-6.910001 25.862,-8.620001" />
+                </g>
+
+            </g>
+
+            <g fill="none" stroke-width="var(--stroke-width)" stroke="var(--stroke-color)">
+
+                <rect width="29.492733" height="49.492733" x="10.253633" y="11.253633"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="22.498411" height="10.498411" x="13.774248" y="17.274254"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="22.453085" height="10.453084" x="13.773453" y="48.273464"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="22.498413" height="10.498412" x="13.774246" y="63.274261"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="13.505944" height="5.5059438" x="18.247044" y="35.246914"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="29.492733" height="49.492733" x="60" y="10.999999" vector-effect="non-scaling-stroke" />
+                <rect width="22.498411" height="10.498411" x="63.520615" y="17.02062"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="22.453085" height="10.453084" x="63.519821" y="48.019833"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="22.498413" height="10.498412" x="63.520615" y="63.020626"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="13.505944" height="5.5059438" x="67.993408" y="34.993279"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="29.492733" height="49.492733" x="110" y="10.999999" vector-effect="non-scaling-stroke" />
+                <rect width="22.498411" height="10.498411" x="113.52061" y="17.02062"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="22.453085" height="10.453084" x="113.51981" y="48.019829"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="22.498413" height="10.498412" x="113.52061" y="63.02063"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="13.505944" height="5.5059438" x="117.9934" y="34.993279"
+                    vector-effect="non-scaling-stroke" />
+            </g>
+        </svg>
+        <p>The problem of course is the payee can't verify that one of the owners did not double-spend
+            the coin. A common solution is to introduce a trusted central authority, or mint, that checks every
+            transaction for double spending. After each transaction, the coin must be returned to the mint to
+            issue a new coin, and only coins issued directly from the mint are trusted not to be double-spent.
+            The problem with this solution is that the fate of the entire money system depends on the
+            company running the mint, with every transaction having to go through them, just like a bank.
+            We need a way for the payee to know that the previous owners did not sign any earlier
+            transactions. For our purposes, the earliest transaction is the one that counts, so we don't care
+            about later attempts to double-spend. The only way to confirm the absence of a transaction is to
+            be aware of all transactions. In the mint based model, the mint was aware of all transactions and
+            decided which arrived first. To accomplish this without a trusted party, transactions must be
+            publicly announced <a href="#ref1">[1]</a>, and we need a system for participants to agree on a single
+            history of the
+            order in which they were received. The payee needs proof that at the time of each transaction, the
+            majority of nodes agreed it was the first received.
+        </p>
+    </section>
+
+    <section id="timestamp-server">
+        <h2>3. Timestamp Server</h2>
+        <p>The solution we propose begins with a timestamp server. A timestamp server works by taking a
+            hash of a block of items to be timestamped and widely publishing the hash, such as in a
+            newspaper or Usenet post <a href="#ref2">[2-5]</a>. The timestamp proves that the data must have existed
+            at
+            the
+            time, obviously, in order to get into the hash. Each timestamp includes the previous timestamp in
+            its hash, forming a chain, with each additional timestamp reinforcing the ones before it.
+        </p>
+        <svg width="100%" height="100%" viewBox="0 0 140 50">
+
+            <g style="font-size:3px;font-family:var(--font-family);text-align:center">
+                <text x="25.979692" y="15.556458">Hash</text>
+                <text x="14.759443" y="28.965174">Block</text>
+                <text x="18.539801" y="35.556458">Item</text>
+                <text x="35.53981" y="35.556458">Item</text>
+                <text x="54.206814" y="35.556458">...</text>
+                <text x="89.137581" y="15.556438">Hash</text>
+                <text x="77.917328" y="28.965155">Block</text>
+                <text x="81.697693" y="35.556435">Item</text>
+                <text x="98.697693" y="35.556435">Item</text>
+                <text x="117.3647" y="35.556435">...</text>
+            </g>
+
+            <g fill="var(--orange-color)">
+                <path d="m 20.50004,15.874984 1.5,1.125 -1.5,1.125 z" />
+                <path d="m 83.658037,15.874984 1.5,1.125 -1.5,1.125 z" />
+                <path d="m 20.50004,10.874984 1.5,1.125 -1.5,1.125 z" />
+                <path d="m 83.658025,10.874984 1.5,1.125 -1.5,1.125 z" />
+                <path d="M 128.5,10.875 130,12 l -1.5,1.125 z" />
+            </g>
+
+            <g fill="none" stroke-width="var(--stroke-width)" stroke="var(--orange-color)">
+                <path d="m 15.00004,24.999984 v -8 h 5.8" />
+                <path d="m 78.158037,24.999984 v -8 h 5.8" />
+                <path d="m 10.00004,11.999984 h 10.8" />
+                <path d="m 37.000025,11.999984 h 46.958" />
+                <path d="M 100.158,12 H 128.8" />
+            </g>
+
+            <g fill="none" stroke-width="var(--stroke-width)" stroke="var(--stroke-color)">
+                <rect width="14.524844" height="8.5248432" x="22.238754" y="10.237884"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.492497" height="6.4924965" x="15.253269" y="31.254055"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.492497" height="6.4924965" x="32.253277" y="31.254055"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.492497" height="6.4924965" x="49.215206" y="31.254055"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="51" height="15" x="13.000032" y="25.000095" vector-effect="non-scaling-stroke" />
+                <rect width="14.524844" height="8.5248432" x="85.396645" y="10.237864"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.492497" height="6.4924965" x="78.411156" y="31.254036"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.492497" height="6.4924965" x="95.411163" y="31.254036"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.492497" height="6.4924965" x="112.37309" y="31.254036"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="51" height="15" x="76.157921" y="25.000076" vector-effect="non-scaling-stroke" />
+            </g>
+
+        </svg>
+    </section>
+
+    <section id="proof-of-work">
+        <h2>4. Proof-of-Work</h2>
+        <p>To implement a distributed timestamp server on a peer-to-peer basis, we will need to use a proofof-work
+            system similar to Adam Back's Hashcash <a href="#ref6">[6]</a>, rather than newspaper or Usenet posts.
+            The proof-of-work involves scanning for a value that when hashed, such as with SHA-256, the
+            hash begins with a number of zero bits. The average work required is exponential in the number
+            of zero bits required and can be verified by executing a single hash.<br>
+            For our timestamp network, we implement the proof-of-work by incrementing a nonce in the
+            block until a value is found that gives the block's hash the required zero bits. Once the CPU
+            effort has been expended to make it satisfy the proof-of-work, the block cannot be changed
+            without redoing the work. As later blocks are chained after it, the work to change the block
+            would include redoing all the blocks after it.
+        </p>
+        <svg width="100%" height="100%" viewBox="0 0 140 50">
+
+            <g style="font-size:3px;font-family:var(--font-family);text-align:center">
+                <text x="11.779964" y="14.147773">Block</text>
+                <text x="19.983053" y="21.556463">Prev Hash</text>
+                <text x="46.61198" y="21.556463">Nonce</text>
+                <text x="19.790829" y="31.556454">Tx</text>
+                <text x="35.29081" y="31.538898">Tx</text>
+                <text x="51.206802" y="31.521288">...</text>
+                <text x="78.035217" y="13.892434">Block</text>
+                <text x="86.238312" y="21.301123">Prev Hash</text>
+                <text x="112.86723" y="21.301123">Nonce</text>
+                <text x="86.046082" y="31.301115">Tx</text>
+                <text x="101.54607" y="31.28356">Tx</text>
+                <text x="117.46206" y="31.265949">...</text>
+            </g>
+
+            <g fill="var(--orange-color)">
+                <path d="m 12.50044,18.874998 1.5,1.125 -1.5,1.125 z" />
+                <path d="m 78.500057,18.874998 1.5,1.125 -1.5,1.125 z" />
+            </g>
+
+            <g fill="none" stroke-width="var(--stroke-width)" stroke="var(--orange-color)">
+                <path d="m 4.00044,19.999998 h 8.8" />
+                <path d="m 64.000057,19.999998 h 14.8" />
+            </g>
+
+            <g fill="none" stroke-width="var(--stroke-width)" stroke="var(--stroke-color)">
+                <rect width="53.489342" height="29.489342" x="10.255216" y="10.255535"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="25.411413" height="6.4114141" x="14.298344" y="17.294603"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="15.425895" height="6.4258957" x="43.289169" y="17.287363"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.489158" height="6.4891572" x="15.333377" y="27.334108"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.489158" height="6.4891572" x="30.833357" y="27.316553"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.489158" height="6.4891572" x="46.351318" y="27.316553"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="53.489342" height="29.489342" x="76.510468" y="10.000196"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="25.411413" height="6.4114141" x="80.553596" y="17.039265"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="15.425895" height="6.4258957" x="109.54443" y="17.032024"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.489158" height="6.4891572" x="81.588631" y="27.07877"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.489158" height="6.4891572" x="97.088608" y="27.061214"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.489158" height="6.4891572" x="112.60658" y="27.061214"
+                    vector-effect="non-scaling-stroke" />
+            </g>
+        </svg>
+        <p>The proof-of-work also solves the problem of determining representation in majority decision
+            making. If the majority were based on one-IP-address-one-vote, it could be subverted by anyone
+            able to allocate many IPs. Proof-of-work is essentially one-CPU-one-vote. The majority
+            decision is represented by the longest chain, which has the greatest proof-of-work effort invested
+            in it. If a majority of CPU power is controlled by honest nodes, the honest chain will grow the
+            fastest and outpace any competing chains. To modify a past block, an attacker would have to
+            redo the proof-of-work of the block and all blocks after it and then catch up with and surpass the
+            work of the honest nodes. We will show later that the probability of a slower attacker catching up
+            diminishes exponentially as subsequent blocks are added.<br>
+            To compensate for increasing hardware speed and varying interest in running nodes over time,
+            the proof-of-work difficulty is determined by a moving average targeting an average number of
+            blocks per hour. If they're generated too fast, the difficulty increases.
+        </p>
+    </section>
+
+    <section id="network">
+        <h2>5. Network</h2>
+        <p>The steps to run the network are as follows:</p>
+        <ol>
+            <li><span class="tab"></span>New transactions are broadcast to all nodes.</li>
+            <li><span class="tab"></span>Each node collects new transactions into a block.</li>
+            <li><span class="tab"></span>Each node works on finding a difficult proof-of-work for its block.</li>
+            <li><span class="tab"></span>When a node finds a proof-of-work, it broadcasts the block to all nodes.</li>
+            <li><span class="tab"></span>Nodes accept the block only if all transactions in it are valid and not already
+                spent.</li>
+            <li><span class="tab"></span>Nodes express their acceptance of the block by working on creating the next
+                block in the
+                chain, using the hash of the accepted block as the previous hash.</li>
+        </ol>
+        <p>Nodes always consider the longest chain to be the correct one and will keep working on
+            extending it. If two nodes broadcast different versions of the next block simultaneously, some
+            nodes may receive one or the other first. In that case, they work on the first one they received,
+            but save the other branch in case it becomes longer. The tie will be broken when the next proofof-work
+            is
+            found and one branch becomes longer; the nodes that were working on the other
+            branch will then switch to the longer one.
+        </p>
+        <p>New transaction broadcasts do not necessarily need to reach all nodes. As long as they reach
+            many nodes, they will get into a block before long. Block broadcasts are also tolerant of dropped
+            messages. If a node does not receive a block, it will request it when it receives the next block and
+            realizes it missed one.
+        </p>
+    </section>
+
+    <section id="incentive">
+        <h2>6. Incentive</h2>
+        <p>By convention, the first transaction in a block is a special transaction that starts a new coin owned
+            by the creator of the block. This adds an incentive for nodes to support the network, and provides
+            a way to initially distribute coins into circulation, since there is no central authority to issue them.
+            The steady addition of a constant of amount of new coins is analogous to gold miners expending
+            resources to add gold to circulation. In our case, it is CPU time and electricity that is expended.
+            The incentive can also be funded with transaction fees. If the output value of a transaction is
+            less than its input value, the difference is a transaction fee that is added to the incentive value of
+            the block containing the transaction. Once a predetermined number of coins have entered
+            circulation, the incentive can transition entirely to transaction fees and be completely inflation
+            free.<br>
+            The incentive may help encourage nodes to stay honest. If a greedy attacker is able to
+            assemble more CPU power than all the honest nodes, he would have to choose between using it
+            to defraud people by stealing back his payments, or using it to generate new coins. He ought to
+            find it more profitable to play by the rules, such rules that favour him with more new coins than
+            everyone else combined, than to undermine the system and the validity of his own wealth.
+        </p>
+    </section>
+
+    <section id="reclaim-disk-space">
+        <h2>7. Reclaiming Disk Space</h2>
+        <p>Once the latest transaction in a coin is buried under enough blocks, the spent transactions before
+            it can be discarded to save disk space. To facilitate this without breaking the block's hash,
+            transactions are hashed in a Merkle Tree <a href="#ref7">[7]</a><a href="#ref2">[2]</a><a
+                href="#ref5">[5]</a>, with only the root included in the block's hash.
+            Old blocks can then be compacted by stubbing off branches of the tree. The interior hashes do
+            not need to be stored.
+        </p>
+        <svg width="100%" height="100%" viewBox="0 0 160 117">
+
+            <g style="font-size:3px;font-family:var(--font-family);text-align:center">
+                <text x="11.780045" y="14.147797">Block</text>
+                <text x="19.280005" y="20.965185">Block Header (Block Hash)</text>
+                <text x="16.933439" y="106.36915">Transactions Hashed in a Merkle Tree</text>
+                <text x="95.044945" y="106.36915">After Pruning Tx0-2 from the Block</text>
+                <text x="25.483122" y="28.056503">Prev Hash</text>
+                <text x="21.4715" y="57.560295">Hash 01</text>
+                <text x="51.509846" y="57.560295">Hash 23</text>
+                <text x="52.112087" y="28.056503">Nonce</text>
+                <text x="34.89695" y="37.556538">Root Hash</text>
+                <text x="14.934102" y="74.560181">Hash0</text>
+                <text x="44.97245" y="74.560181">Hash2</text>
+                <text x="16.770185" y="91.560341">Tx0</text>
+                <text x="46.80851" y="91.560341">Tx2</text>
+                <text x="31.808495" y="91.560341">Tx1</text>
+                <text x="61.846821" y="91.560341">Tx3</text>
+                <text x="29.972422" y="74.560181">Hash1</text>
+                <text x="60.010777" y="74.560181">Hash3</text>
+                <text x="87.586136" y="14.149432">Block</text>
+                <text x="95.086098" y="20.96682">Block Header (Block Hash)</text>
+                <text x="101.28922" y="28.058138">Prev Hash</text>
+                <text x="97.277542" y="57.561932">Hash 01</text>
+                <text x="127.31589" y="57.561932">Hash 23</text>
+                <text x="127.91818" y="28.058138">Nonce</text>
+                <text x="110.70305" y="37.558174">Root Hash</text>
+                <text x="120.77854" y="74.561813">Hash2</text>
+                <text x="137.65286" y="91.561974">Tx3</text>
+                <text x="135.81688" y="74.561813">Hash3</text>
+            </g>
+
+            <g fill="var(--orange-color)">
+
+                <path d="M 33.256,40.688 35,40 l 0.172,1.867 z" />
+                <path d="M 48.713,41.869 48.867,40 l 1.751,0.671 z" />
+                <path d="M 21.443,61.044 23,60 l 0.566,1.787 z" />
+                <path d="M 51.481,61.044 53.038,60 l 0.567,1.787 z" />
+                <path d="M 30.434,61.787 31,60 l 1.557,1.044 z" />
+                <path d="M 60.472,61.787 61.038,60 l 1.558,1.044 z" />
+                <path d="m 18.337,78.5 1.125,-1.5 1.125,1.5 z" />
+                <path d="M 48.375,78.5 49.5,77 l 1.125,1.5 z" />
+                <path d="M 33.375,78.5 34.5,77 l 1.125,1.5 z" />
+                <path d="m 63.413,78.5 1.125,-1.5 1.125,1.5 z" />
+                <path d="m 139.21939,78.501659 1.12501,-1.5 1.125,1.5 z" />
+                <path d="m 109.0622,40.689636 1.744,-0.688 0.172,1.867 z" />
+                <path d="m 124.51935,41.870648 0.154,-1.869 1.75101,0.671 z" />
+                <path d="m 127.28736,61.045654 1.557,-1.044 0.567,1.787 z" />
+                <path d="m 136.27838,61.788654 0.56601,-1.787 1.558,1.044 z" />
+            </g>
+
+            <g fill="none" stroke-width="var(--stroke-width)" stroke="var(--orange-color)">
+                <path d="m 27,53 c 0,0 5.484,-8.912 7.371,-11.978" />
+                <path d="m 57.038,53 c 0,0 -5.608,-8.923 -7.532,-11.984" />
+                <path d="m 19.5,70 c 0,0 2.187,-6.249 3.104,-8.867" />
+                <path d="m 49.538,70 c 0,0 2.187,-6.249 3.104,-8.867" />
+                <path d="m 34.5,70 c 0,0 -2.187,-6.249 -3.104,-8.867" />
+                <path d="m 64.538,70 c 0,0 -2.187,-6.249 -3.103,-8.867" />
+                <path d="M 19.462,87 V 78.2" />
+                <path d="M 49.5,87 V 78.2" />
+                <path d="M 34.5,87 V 78.2" />
+                <path d="M 64.538,87 V 78.2" />
+                <path d="M 140.3444,87.001662 V 78.201659" />
+                <path d="m 102.8062,53.001636 c 0,0 5.484,-8.912 7.371,-11.978" />
+                <path d="m 132.84438,53.001652 c 0,0 -5.60802,-8.923003 -7.53203,-11.984004" />
+                <path d="m 125.34435,70.001657 c 0,0 2.18701,-6.249002 3.10401,-8.867003" />
+                <path d="m 140.3444,70.001657 c 0,0 -2.18701,-6.249002 -3.10301,-8.867003" />
+            </g>
+
+            <g fill="none" stroke-width="var(--stroke-width)" stroke="var(--stroke-color)">
+                <rect width="63.503323" height="89.503319" x="10.194045" y="9.9985638"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="50.503597" height="26.503597" x="16.620611" y="16.120417"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="25.514236" height="6.5142365" x="19.747057" y="23.743193"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="15.505978" height="6.5059762" x="48.749321" y="23.747322"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="19.503515" height="6.5035152" x="32.250488" y="33.248577"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.501832" height="6.5018311" x="12.983916" y="87.249413"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.501832" height="6.5018311" x="27.818642" y="87.231102"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.501832" height="6.5018311" x="43.01498" y="87.231102"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.501832" height="6.5018311" x="58.064308" y="87.250145"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="63.503323" height="89.503319" x="86.000244" y="10.0002"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="50.503597" height="26.503597" x="92.426811" y="16.122053"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="25.514236" height="6.5142365" x="95.553261" y="23.744829"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="15.505978" height="6.5059762" x="124.55552" y="23.748957"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="19.503515" height="6.5035152" x="108.05669" y="33.250214"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.501832" height="6.5018311" x="96.460693" y="53.251076"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.501832" height="6.5018311" x="118.90696" y="70.250244"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="12.501832" height="6.5018311" x="133.8705" y="87.25177"
+                    vector-effect="non-scaling-stroke" />
+
+                <g stroke-dasharray="2,2" stroke-dashoffset="0">
+                    <rect width="12.501832" height="6.5018311" x="126.70638" y="53.251808"
+                        vector-effect="non-scaling-stroke" />
+                    <rect width="12.501832" height="6.5018311" x="133.9563" y="70.251709"
+                        vector-effect="non-scaling-stroke" />
+                    <rect width="12.501832" height="6.5018311" x="20.654493" y="53.249443"
+                        vector-effect="non-scaling-stroke" />
+                    <rect width="12.501832" height="6.5018311" x="50.900177" y="53.250175"
+                        vector-effect="non-scaling-stroke" />
+                    <rect width="12.501832" height="6.5018311" x="13.069695" y="70.249344"
+                        vector-effect="non-scaling-stroke" />
+                    <rect width="12.501832" height="6.5018311" x="27.904423" y="70.248611"
+                        vector-effect="non-scaling-stroke" />
+                    <rect width="12.501832" height="6.5018311" x="43.100758" y="70.248611"
+                        vector-effect="non-scaling-stroke" />
+                    <rect width="12.501832" height="6.5018311" x="58.150097" y="70.250076"
+                        vector-effect="non-scaling-stroke" />
+                </g>
+            </g>
+        </svg>
+        <p>A block header with no transactions would be about 80 bytes. If we suppose blocks are
+            generated every 10 minutes, 80 bytes * 6 * 24 * 365 = 4.2MB per year. With computer systems
+            typically selling with 2GB of RAM as of 2008, and Moore's Law predicting current growth of
+            1.2GB per year, storage should not be a problem even if the block headers must be kept in
+            memory.
+        </p>
+    </section>
+
+    <section id="simplified-payment-verification">
+        <h2>8. Simplified Payment Verification</h2>
+        <p>It is possible to verify payments without running a full network node. A user only needs to keep
+            a copy of the block headers of the longest proof-of-work chain, which he can get by querying
+            network nodes until he's convinced he has the longest chain, and obtain the Merkle branch
+            linking the transaction to the block it's timestamped in. He can't check the transaction for
+            himself, but by linking it to a place in the chain, he can see that a network node has accepted it,
+            and blocks added after it further confirm the network has accepted it.
+        </p>
+        <svg width="100%" height="100%" viewBox="0 0 190 102">
+            <g style="font-size:3px;font-family:var(--font-family);text-align:center">
+                <text x="12.779979" y="19.965151">Block Header</text>
+                <text x="9.8649998" y="12.14777">Longest Proof-of-Work Chain</text>
+                <text x="126.73941" y="64.889862">Merkle Branch for Tx3</text>
+                <text x="18.983036" y="26.556459">Prev Hash</text>
+                <text x="75.433113" y="55.56015">Hash 01</text>
+                <text x="105.47133" y="55.560158">Hash 23</text>
+                <text x="44.612038" y="26.556459">Nonce</text>
+                <text x="27.397881" y="35.556477">Merkle Root</text>
+                <text x="98.934158" y="72.56015">Hash2</text>
+                <text x="115.80828" y="89.560211">Tx3</text>
+                <text x="113.9724" y="72.56015">Hash3</text>
+                <text x="72.770355" y="19.955494">Block Header</text>
+                <text x="78.973412" y="26.546803">Prev Hash</text>
+                <text x="104.60241" y="26.546803">Nonce</text>
+                <text x="87.38826" y="35.546818">Merkle Root</text>
+                <text x="132.77031" y="19.955494">Block Header</text>
+                <text x="138.97336" y="26.546803">Prev Hash</text>
+                <text x="164.60236" y="26.546803">Nonce</text>
+                <text x="147.38821" y="35.546818">Merkle Root</text>
+            </g>
+
+            <g fill="var(--orange-color)">
+                <path d="m 87.217315,38.687884 1.745005,-0.687998 0.172001,1.866995 z" />
+                <path d="m 102.67479,39.868881 0.154,-1.868995 1.75101,0.670998 z" />
+                <path d="m 105.4433,59.043826 1.557,-1.043997 0.566,1.786995 z" />
+                <path d="m 114.43433,59.786824 0.566,-1.786995 1.557,1.043997 z" />
+                <path d="m 117.37533,76.499776 1.12501,-1.499996 1.125,1.499996 z" />
+                <path d="m 11.1,24.375233 1.5,1.125 -1.5,1.125 z" />
+                <path d="m 131.09068,24.365575 1.5,1.125 -1.5,1.125 z" />
+                <path d="m 71.090551,24.365575 1.5,1.125 -1.5,1.125 z" />
+                <path d="m 185.1,24.375233 1.5,1.125 -1.5,1.125 z" />
+            </g>
+
+            <g fill="none" stroke-width="var(--stroke-width)" stroke="var(--orange-color)">
+                <path d="m 80.962296,50.999849 c 0,0 5.484016,-8.911974 7.371022,-11.977966" />
+                <path d="m 110.99982,50.999849 c 0,0 -5.60902,-8.922974 -7.53302,-11.983966" />
+                <path d="m 103.50029,67.9998 c 0,0 2.18701,-6.248982 3.10401,-8.866974" />
+                <path d="m 118.50034,67.9998 c 0,0 -2.18701,-6.248982 -3.10401,-8.866974" />
+                <path d="M 118.50034,84.999752 V 76.199777" />
+                <path d="m 5,25.500233 h 6.8" />
+                <path d="m 119.47288,25.490575 h 12.3178" />
+                <path d="M 59.472746,25.490575 H 71.790551" />
+                <path d="m 179.5,25.500233 h 6.8" />
+            </g>
+
+            <g fill="none" stroke-width="var(--stroke-width)" stroke="var(--stroke-color)">
+                <rect width="25.521839" height="6.5218382" x="12.99319" y="22.239313"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="15.50628" height="6.5062804" x="41.187679" y="22.247093"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="19.579346" height="6.5793467" x="25.801184" y="31.210548"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="49.480682" height="25.480684" x="10.009693" y="15.009613"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="25.521839" height="6.5218382" x="72.983742" y="22.229656"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="15.50628" height="6.5062804" x="101.17823" y="22.237434"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="19.579346" height="6.5793467" x="85.791733" y="31.20089"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="49.480682" height="25.480684" x="70.000244" y="14.999955"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="25.521839" height="6.5218382" x="132.98387" y="22.229656"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="15.50628" height="6.5062804" x="161.17836" y="22.237434"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="19.579346" height="6.5793467" x="145.79185" y="31.200891"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="49.480682" height="25.480684" x="130.00037" y="14.999955"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="13.507296" height="6.5072961" x="74.113541" y="51.246525"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="13.507296" height="6.5072961" x="96.559967" y="68.245743"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="13.507296" height="6.5072961" x="111.52335" y="85.247131"
+                    vector-effect="non-scaling-stroke" />
+
+                <g stroke-dasharray="2, 2" stroke-dashoffset="0">
+                    <rect width="13.507296" height="6.5072961" x="111.60924" y="68.247208"
+                        vector-effect="non-scaling-stroke" />
+                    <rect width="13.507296" height="6.5072961" x="104.35922" y="51.247215"
+                        vector-effect="non-scaling-stroke" />
+                </g>
+            </g>
+
+        </svg>
+        <p>As such, the verification is reliable as long as honest nodes control the network, but is more
+            vulnerable if the network is overpowered by an attacker. While network nodes can verify
+            transactions for themselves, the simplified method can be fooled by an attacker's fabricated
+            transactions for as long as the attacker can continue to overpower the network. One strategy to
+            protect against this would be to accept alerts from network nodes when they detect an invalid
+            block, prompting the user's software to download the full block and alerted transactions to
+            confirm the inconsistency. Businesses that receive frequent payments will probably still want to
+            run their own nodes for more independent security and quicker verification.
+        </p>
+    </section>
+
+    <section id="combining-and-splitting-value">
+        <h2>9. Combining and Splitting Value</h2>
+        <p>Although it would be possible to handle coins individually, it would be unwieldy to make a
+            separate transaction for every cent in a transfer. To allow value to be split and combined,
+            transactions contain multiple inputs and outputs. Normally there will be either a single input
+            from a larger previous transaction or multiple inputs combining smaller amounts, and at most two
+            outputs: one for the payment, and one returning the change, if any, back to the sender.
+        </p>
+        <svg width="100%" height="100%" viewBox="0 0 70 60">
+
+            <g style="font-size:3px;font-family:var(--font-family);text-align:center">
+                <text x="21.280056" y="14.965173">Transaction</text>
+                <text x="26.712463" y="23.55649">In</text>
+                <text x="26.712463" y="33.556507">In</text>
+                <text x="26.713463" y="43.444321">...</text>
+                <text x="39.545464" y="23.55649">Out</text>
+                <text x="40.713463" y="33.556507">...</text>
+            </g>
+
+            <g fill="var(--orange-color)">
+                <path d="m 21.70003,21.375011 1.500003,1.125 -1.500003,1.125001 z" />
+                <path d="m 58.000076,21.375011 1.500003,1.125 -1.500003,1.125001 z" />
+                <path d="m 21.70003,31.356996 1.500003,1.125 -1.500003,1.125001 z" />
+                <path d="m 58.000076,31.356996 1.500003,1.125 -1.500003,1.125001 z" />
+                <path d="m 21.70003,41.375021 1.500003,1.125001 -1.500003,1.125 z" />
+            </g>
+
+            <g fill="none" stroke-width="var(--stroke-width)" stroke="var(--orange-color)">
+                <path d="M 10.500007,22.500011 H 22.300031" />
+                <path d="M 46.500053,22.500011 H 58.300077" />
+                <path d="M 10.500007,32.481996 H 22.300031" />
+                <path d="M 46.500053,32.481996 H 58.300077" />
+                <path d="M 10.500007,42.500022 H 22.300031" />
+            </g>
+
+            <g fill="none" stroke-width="var(--stroke-width)" stroke="var(--stroke-color)">
+                <rect width="33" height="40" x="18.5" y="10" vector-effect="non-scaling-stroke" />
+                <rect width="9" height="7" x="23.5" y="19" vector-effect="non-scaling-stroke" />
+                <rect width="9" height="7" x="37.524712" y="18.982027" vector-effect="non-scaling-stroke" />
+                <rect width="9" height="7" x="37.468102" y="28.982777" vector-effect="non-scaling-stroke" />
+                <rect width="9" height="7" x="23.499329" y="28.982777" vector-effect="non-scaling-stroke" />
+                <rect width="9" height="7" x="23.468102" y="39.000023" vector-effect="non-scaling-stroke" />
+
+            </g>
+        </svg>
+        <p>It should be noted that fan-out, where a transaction depends on several transactions, and those
+            transactions depend on many more, is not a problem here. There is never the need to extract a
+            complete standalone copy of a transaction's history.
+        </p>
+    </section>
+
+    <section id="privacy">
+        <h2>10. Privacy</h2>
+        <p>The traditional banking model achieves a level of privacy by limiting access to information to the
+            parties involved and the trusted third party. The necessity to announce all transactions publicly
+            precludes this method, but privacy can still be maintained by breaking the flow of information in
+            another place: by keeping public keys anonymous. The public can see that someone is sending
+            an amount to someone else, but without information linking the transaction to anyone. This is
+            similar to the level of information released by stock exchanges, where the time and size of
+            individual trades, the "tape", is made public, but without telling who the parties were.
+        </p>
+        <svg width="100%" height="100%" viewBox="0 0 150 60">
+
+            <g style="font-size:3px;font-family:var(--font-family);text-align:center">
+                <text x="70.392334" y="43.556477">Public</text>
+                <text x="92.807297" y="21.276674">Counterparty</text>
+                <text x="124.3923" y="21.276674">Public</text>
+                <text x="14.417961" y="21.55615">Identities</text>
+                <text x="39.417969" y="21.55615">Transactions</text>
+                <text x="14.417961" y="43.55616">Identities</text>
+                <text x="39.522705" y="43.55616">Transactions</text>
+                <text x="9.673368" y="12.14569">Traditional Privacy Model</text>
+                <text x="69.774997" y="19.827">Trusted</text>
+                <text x="67.268997" y="22.925">Third Party</text>
+                <text x="9.9293985" y="33.147808">New Privacy Model</text>
+            </g>
+
+            <g fill="var(--orange-color)">
+                <path d="M 62.5,21.625 64,20.5 62.5,19.375 Z" />
+                <path d="M 62.5,41.375 64,42.5 62.5,43.625 Z" />
+                <path d="M 89.5,19.375 91,20.5 89.5,21.625 Z" />
+            </g>
+
+            <g stroke-width="var(--stroke-width)" stroke="var(--orange-color)">
+                <path d="m 58,20.5 h 4.8" />
+                <path d="m 58,42.5 h 4.8" />
+                <path d="m 85,20.5 h 4.8" />
+                <path d="M 115,13.999999 V 27.999998" />
+                <path d="m 34,36.000009 v 14" />
+                <path d="m 31,20.499998 h 6" />
+            </g>
+
+            <g fill="none" stroke-width="var(--stroke-width)" stroke="var(--stroke-color)">
+                <rect width="20.999992" height="7" x="9.9999962" y="16.999998" vector-effect="non-scaling-stroke" />
+                <rect width="20.999992" height="7" x="37.000004" y="16.999998" vector-effect="non-scaling-stroke" />
+                <rect width="20.230787" height="9.786787" x="64.519211" y="15.606605"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="20.230787" height="9.786787" x="91.43116" y="15.606914"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="20.230787" height="9.786787" x="118.46855" y="15.327128"
+                    vector-effect="non-scaling-stroke" />
+                <rect width="20.999992" height="7" x="9.9999962" y="39.000008" vector-effect="non-scaling-stroke" />
+                <rect width="20.999992" height="7" x="37.000004" y="39.000008" vector-effect="non-scaling-stroke" />
+                <rect width="20.230787" height="9.786787" x="64.46859" y="37.606613"
+                    vector-effect="non-scaling-stroke" />
+            </g>
+        </svg>
+        <p>As an additional firewall, a new key pair should be used for each transaction to keep them
+            from being linked to a common owner. Some linking is still unavoidable with multi-input
+            transactions, which necessarily reveal that their inputs were owned by the same owner. The risk
+            is that if the owner of a key is revealed, linking could reveal other transactions that belonged to
+            the same owner.
+        </p>
+    </section>
+
+    <section id="calculations">
+        <h2>11. Calculations</h2>
+        <p>We consider the scenario of an attacker trying to generate an alternate chain faster than the honest
+            chain. Even if this is accomplished, it does not throw the system open to arbitrary changes, such
+            as creating value out of thin air or taking money that never belonged to the attacker. Nodes are
+            not going to accept an invalid transaction as payment, and honest nodes will never accept a block
+            containing them. An attacker can only try to change one of his own transactions to take back
+            money he recently spent.<br>
+            The race between the honest chain and an attacker chain can be characterized as a Binomial
+            Random Walk. The success event is the honest chain being extended by one block, increasing its
+            lead by +1, and the failure event is the attacker's chain being extended by one block, reducing the
+            gap by -1.<br>
+            The probability of an attacker catching up from a given deficit is analogous to a Gambler's
+            Ruin problem. Suppose a gambler with unlimited credit starts at a deficit and plays potentially an
+            infinite number of trials to try to reach breakeven. We can calculate the probability he ever
+            reaches breakeven, or that an attacker ever catches up with the honest chain, as follows <a
+                href="#ref8">[8]</a>:
+        </p>
+        <br>
+        <math>
+            <mrow>
+                <mi>p</mi>
+                <mo>=</mo>
+                <mo>&InvisibleTimes;</mo>
+            </mrow>
+        </math>
+        <span> probability an honest node finds the next block</span>
+        <br>
+        <math>
+            <mrow>
+                <mi>q</mi>
+                <mo>=</mo>
+                <mo>&InvisibleTimes;</mo>
+            </mrow>
+        </math>
+        <span> probability the attacker finds the next block</span>
+        <br>
+        <math>
+            <msubsup>
+                <mi> q</mi>
+                <mn> z </mn>
+                <mn></mn>
+            </msubsup>
+            <mo>=</mo>
+        </math>
+        <span> probability the attacker will ever catch up from z blocks behind</span>
+        <br>
+        <br>
+        <math>
+            <msubsup>
+                <mi> q</mi>
+                <mn> 0 </mn>
+                <mn></mn>
+            </msubsup>
+            <mo>=</mo>
+            <mrow>
+                <mo>{</mo>
+                <mtable>
+                    <mtr>
+                        <mtd>
+                            <mn>1</mn>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mi>if</mi>
+                                <mi>p</mi>
+                                <mo>&le;</mo>
+                                <mi>q</mi>
+                            </mrow>
+                        </mtd>
+                    </mtr>
+                    <mtr>
+                        <mtd>
+                            <mrow>
+
+                                <msup>
+                                    <mfenced>
+                                        <mrow>
+                                            <mi>q</mi>
+                                            <mo>/</mo>
+                                            <mi>p</mi>
+                                        </mrow>
+                                    </mfenced>
+                                    <mn>z</mn>
+                                </msup>
+                            </mrow>
+                        </mtd>
+                        <mtd>
+                            <mrow>
+                                <mi>if</mi>
+                                <mi>p</mi>
+                                <mo>&gt;</mo>
+                                <mi>q</mi>
+                            </mrow>
+                        </mtd>
+                    </mtr>
+                </mtable>
+                <mo>}</mo>
+            </mrow>
+        </math>
+        <br>
+        <br>
+        <br>
+        <p>Given our assumption that
+            <math>
+                <mrow>
+                    <mi>p</mi>
+                    <mo>&gt;</mo>
+                    <mi>q</mi>
+                </mrow>
+            </math>, the probability drops exponentially as the number of blocks the
+            attacker has to catch up with increases. With the odds against him, if he doesn't make a lucky
+            lunge forward early on, his chances become vanishingly small as he falls further behind.
+            We now consider how long the recipient of a new transaction needs to wait before being
+            sufficiently certain the sender can't change the transaction. We assume the sender is an attacker
+            who wants to make the recipient believe he paid him for a while, then switch it to pay back to
+            himself after some time has passed. The receiver will be alerted when that happens, but the
+            sender hopes it will be too late.
+            The receiver generates a new key pair and gives the public key to the sender shortly before
+            signing. This prevents the sender from preparing a chain of blocks ahead of time by working on
+            it continuously until he is lucky enough to get far enough ahead, then executing the transaction at
+            that moment. Once the transaction is sent, the dishonest sender starts working in secret on a
+            parallel chain containing an alternate version of his transaction.
+            The recipient waits until the transaction has been added to a block and z blocks have been
+            linked after it. He doesn't know the exact amount of progress the attacker has made, but
+            assuming the honest blocks took the average expected time per block, the attacker's potential
+            progress will be a Poisson distribution with expected value:
+        </p>
+        <br>
+        <math>
+            <mrow>
+                <mo>&lambda;</mo>
+                <mo>=</mo>
+                <mi>z</mi>
+                <mfrac>
+                    <mi>q</mi>
+                    <mi>p</mi>
+                </mfrac>
+            </mrow>
+        </math>
+        <br>
+        <br>
+        <br>
+        <p>To get the probability the attacker could still catch up now, we multiply the Poisson density for
+            each amount of progress he could have made by the probability he could catch up from that point:
+        </p>
+        <br>
+        <math>
+            <mrow>
+                <mstyle displaystyle='true'>
+                    <munderover>
+                        <mo>&sum;</mo>
+                        <mrow>
+                            <mi>k</mi>
+                            <mo>=</mo>
+                            <mn>0</mn>
+                        </mrow>
+                        <mi>&infin;</mi>
+                    </munderover>
+                    <mfrac>
+                        <mrow>
+                            <msup>
+                                <mo>&lambda;</mo>
+                                <mi>k</mi>
+                            </msup>
+                            <msup>
+                                <mi>e</mi>
+                                <mrow>
+                                    <mo>-</mo>
+                                    <mo>&lambda;</mo>
+                                </mrow>
+                            </msup>
+                        </mrow>
+                        <mrow>
+                            <mi>k</mi>
+                            <mo>!</mo>
+                        </mrow>
+                    </mfrac>
+                    <mo>&sdot;</mo>
+                    <mrow>
+                        <mo>{</mo>
+                        <mtable>
+                            <mtr>
+                                <mtd>
+                                    <mrow>
+                                        <msup>
+                                            <mfenced>
+                                                <mrow>
+                                                    <mi>q</mi>
+                                                    <mo>/</mo>
+                                                    <mi>p</mi>
+                                                </mrow>
+                                            </mfenced>
+                                            <mrow>
+                                                <mfenced>
+                                                    <mrow>
+                                                        <mi>z</mi>
+                                                        <mo>-</mo>
+                                                        <mi>k</mi>
+                                                    </mrow>
+                                                </mfenced>
+                                            </mrow>
+                                        </msup>
+                                    </mrow>
+                                </mtd>
+                                <mtd>
+                                    <mrow>
+                                        <mi>if</mi>
+                                        <mi>k</mi>
+                                        <mo>&le;</mo>
+                                        <mi>z</mi>
+                                    </mrow>
+                                </mtd>
+                            </mtr>
+                            <mtr>
+                                <mtd>
+                                    <mn>1</mn>
+                                </mtd>
+                                <mtd>
+                                    <mrow>
+                                        <mi>if</mi>
+                                        <mi>k</mi>
+                                        <mo>&gt;</mo>
+                                        <mi>z</mi>
+                                    </mrow>
+                                </mtd>
+                            </mtr>
+                        </mtable>
+                        <mo>}</mo>
+                    </mrow>
+                </mstyle>
+            </mrow>
+        </math>
+        <br>
+        <br>
+        <br>
+        <p>Rearranging to avoid summing the infinite tail of the distribution...</p>
+        <br>
+        <math>
+            <mrow>
+                <mn>1</mn>
+                <mo>-</mo>
+                <mstyle displaystyle='true'>
+                    <munderover>
+                        <mo>&sum;</mo>
+                        <mrow>
+                            <mi>k</mi>
+                            <mo>=</mo>
+                            <mn>0</mn>
+                        </mrow>
+                        <mi>z</mi>
+                    </munderover>
+                    <mfrac>
+                        <mrow>
+                            <msup>
+                                <mo>&lambda;</mo>
+                                <mi>k</mi>
+                            </msup>
+                            <msup>
+                                <mi>e</mi>
+                                <mrow>
+                                    <mo>-</mo>
+                                    <mo>&lambda;</mo>
+                                </mrow>
+                            </msup>
+                        </mrow>
+                        <mrow>
+                            <mi>k</mi>
+                            <mo>!</mo>
+                        </mrow>
+                    </mfrac>
+                    <mrow>
+                        <mfenced>
+                            <mrow>
+                                <mn>1</mn>
+                                <mo>&minus;</mo>
+                                <msup>
+                                    <mfenced>
+                                        <mrow>
+                                            <mi>q</mi>
+                                            <mo>/</mo>
+                                            <mi>p</mi>
+                                        </mrow>
+                                    </mfenced>
+                                    <mfenced>
+                                        <mrow>
+                                            <mi>z</mi>
+                                            <mo>&minus;</mo>
+                                            <mi>k</mi>
+                                        </mrow>
+                                    </mfenced>
+                                </msup>
+                            </mrow>
+                        </mfenced>
+                    </mrow>
+                </mstyle>
+            </mrow>
+        </math>
+        <br>
+        <br>
+        <br>
+        <p>Converting to C code...</p>
+        <pre class="code">
+            <code>
+    #include &lt;math.h>
+    double AttackerSuccessProbability(double q, int z)
+    {
+        double p = 1.0 - q;
+        double lambda = z * (q / p);
+        double sum = 1.0;
+        int i, k;
+        for (k = 0; k <= z; k++)
+        {
+            double poisson = exp(-lambda);
+            for (i = 1; i <= k; i++)
+                poisson *= lambda / i;
+            sum -= poisson * (1 - pow(q / p, z - k));
+        }
+        return sum;
+    }</code>
+        </pre>
+        <br>
+        <p>Running some results, we can see the probability drop off exponentially with z.</p>
+        <p>
+        <pre class="samp">
+            <samp>
+    q=0.1
+    z=0  P=1.0000000
+    z=1  P=0.2045873
+    z=2  P=0.0509779
+    z=3  P=0.0131722
+    z=4  P=0.0034552
+    z=5  P=0.0009137
+    z=6  P=0.0002428
+    z=7  P=0.0000647
+    z=8  P=0.0000173
+    z=9  P=0.0000046
+    z=10 P=0.0000012
+
+    q=0.3
+    z=0  P=1.0000000
+    z=5  P=0.1773523
+    z=10 P=0.0416605
+    z=15 P=0.0101008
+    z=20 P=0.0024804
+    z=25 P=0.0006132
+    z=30 P=0.0001522
+    z=35 P=0.0000379
+    z=40 P=0.0000095
+    z=45 P=0.0000024
+    z=50 P=0.0000006</samp>
+        </pre>
+        <br>
+        </p>
+        <p>Solving for P less than 0.1%...</p>
+        <p>
+        <pre class="samp">
+                <samp>
+    P < 0.001
+    q=0.10 z=5
+    q=0.15 z=8
+    q=0.20 z=11
+    q=0.25 z=15
+    q=0.30 z=24
+    q=0.35 z=41
+    q=0.40 z=89
+    q=0.45 z=340</samp>
+            </pre>
+        </p>
+    </section>
+
+    <section id="conclusion">
+        <h2>12. Conclusion</h2>
+        <p>We have proposed a system for electronic transactions without relying on trust. We started with
+            the usual framework of coins made from digital signatures, which provides strong control of
+            ownership, but is incomplete without a way to prevent double-spending. To solve this, we
+            proposed a peer-to-peer network using proof-of-work to record a public history of transactions
+            that quickly becomes computationally impractical for an attacker to change if honest nodes
+            control a majority of CPU power. The network is robust in its unstructured simplicity. Nodes
+            work all at once with little coordination. They do not need to be identified, since messages are
+            not routed to any particular place and only need to be delivered on a best effort basis. Nodes can
+            leave and rejoin the network at will, accepting the proof-of-work chain as proof of what
+            happened while they were gone. They vote with their CPU power, expressing their acceptance of
+            valid blocks by working on extending them and rejecting invalid blocks by refusing to work on
+            them. Any needed rules and incentives can be enforced with this consensus mechanism.
+        </p>
+    </section>
+
+    <section id="references">
+        <h2>References</h2>
+        <ol class="ref">
+            <li id="ref1">W. Dai, "b-money," <a
+                    href="http://www.weidai.com/bmoney.txt">http://www.weidai.com/bmoney.txt</a>,
+                1998.</li>
+            <li id="ref2">H. Massias, X.S. Avila, and J.-J. Quisquater, "Design of a secure timestamping service
+                with
+                minimal
+                trust requirements," In 20th Symposium on Information Theory in the Benelux, May 1999.</li>
+            <li id="ref3">S. Haber, W.S. Stornetta, "How to time-stamp a digital document," In Journal of
+                Cryptology,
+                vol 3, no
+                2, pages 99-111, 1991.</li>
+            <li id="ref4">D. Bayer, S. Haber, W.S. Stornetta, "Improving the efficiency and reliability of digital
+                time-stamping,"
+                In Sequences II: Methods in Communication, Security and Computer Science, pages 329-334, 1993.</li>
+            <li id="ref5">S. Haber, W.S. Stornetta, "Secure names for bit-strings," In Proceedings of the 4th ACM
+                Conference
+                on Computer and Communications Security, pages 28-35, April 1997.</li>
+            <li id="ref6">A. Back, "Hashcash - a denial of service counter-measure,"
+                <a href="http://www.hashcash.org/papers/hashcash.pdf">http://www.hashcash.org/papers/hashcash.pdf</a>,
+                2002.
+            </li>
+            <li id="ref7">R.C. Merkle, "Protocols for public key cryptosystems," In Proc. 1980 Symposium on Security
+                and
+                Privacy, IEEE Computer Society, pages 122-133, April 1980.</li>
+            <li id="ref8">W. Feller, "An introduction to probability theory and its applications," 1957.</li>
+        </ol>
+    </section>
+
+    <span id="tag"><a href="https://brunoperry.net">brunoperry.net@2022</a></span>
+
+    <div id="menu">
+        <ul id="menu-container">
+            <li>
+                <h2>Index:</h2>
+            </li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#transactions">Transactions</a></li>
+            <li><a href="#timestamp-server">Timestamp Server</a></li>
+            <li><a href="#proof-of-work">Proof-of-Work</a></li>
+            <li><a href="#network">Network</a></li>
+            <li><a href="#incentive">Incentive</a></li>
+            <li><a href="#reclaim-disk-space">Reclaim Disk Space</a></li>
+            <li><a href="#simplified-payment-verification">Simplified Payment Verification</a></li>
+            <li><a href="#combining-and-splitting-value">Combining and Splitting Value</a></li>
+            <li><a href="#privacy">Privacy</a></li>
+            <li><a href="#calculations">Calculations</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+            <li><a href="#references">References</a></li>
+        </ul>
+        <button id="menu-button" aria-label="Open Close Menu">
+            <svg height="100%" width="100%" viewBox="0 0 64 64">
+                <g transform="translate(0.00630876,-0.00301984)">
+                    <path fill="var(--orange-color)"
+                        d="m63.033,39.744c-4.274,17.143-21.637,27.576-38.782,23.301-17.138-4.274-27.571-21.638-23.295-38.78,4.272-17.145,21.635-27.579,38.775-23.305,17.144,4.274,27.576,21.64,23.302,38.784z" />
+                    <path fill="var(--white-color"
+                        d="m46.103,27.444c0.637-4.258-2.605-6.547-7.038-8.074l1.438-5.768-3.511-0.875-1.4,5.616c-0.923-0.23-1.871-0.447-2.813-0.662l1.41-5.653-3.509-0.875-1.439,5.766c-0.764-0.174-1.514-0.346-2.242-0.527l0.004-0.018-4.842-1.209-0.934,3.75s2.605,0.597,2.55,0.634c1.422,0.355,1.679,1.296,1.636,2.042l-1.638,6.571c0.098,0.025,0.225,0.061,0.365,0.117-0.117-0.029-0.242-0.061-0.371-0.092l-2.296,9.205c-0.174,0.432-0.615,1.08-1.609,0.834,0.035,0.051-2.552-0.637-2.552-0.637l-1.743,4.019,4.569,1.139c0.85,0.213,1.683,0.436,2.503,0.646l-1.453,5.834,3.507,0.875,1.439-5.772c0.958,0.26,1.888,0.5,2.798,0.726l-1.434,5.745,3.511,0.875,1.453-5.823c5.987,1.133,10.489,0.676,12.384-4.739,1.527-4.36-0.076-6.875-3.226-8.515,2.294-0.529,4.022-2.038,4.483-5.155zm-8.022,11.249c-1.085,4.36-8.426,2.003-10.806,1.412l1.928-7.729c2.38,0.594,10.012,1.77,8.878,6.317zm1.086-11.312c-0.99,3.966-7.1,1.951-9.082,1.457l1.748-7.01c1.982,0.494,8.365,1.416,7.334,5.553z" />
+                </g>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        window.onload = () => {
+
+            document.body.style.opacity = 1;
+
+            let isMenuOpen = false;
+            const menu = document.querySelector('#menu-container');
+            const openCloseMenu = () => isMenuOpen ? menu.style.transform = 'translateX(0)' : menu.style.transform = 'translateX(-100%)';
+
+            menu.onclick = () => {
+                isMenuOpen = false;
+                openCloseMenu();
+            }
+            document.querySelector('#menu-button').onclick = () => {
+                isMenuOpen = !isMenuOpen;
+                openCloseMenu();
+            }
+        }
+    </script>
+</body>
+
+</html>

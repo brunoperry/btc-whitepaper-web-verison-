@@ -1,0 +1,186 @@
+@font-face {
+  font-family: "Titillium Web";
+  src: url("font/TitilliumWeb-Regular.eot");
+  src: url("font/TitilliumWeb-Regular.eot?#iefix") format("embedded-opentype"),
+    url("font/TitilliumWeb-Regular.ttf") format("truetype"),
+    url("font/TitilliumWeb-Regular.svg#TitilliumWeb-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Titillium Web";
+  src: url("font/TitilliumWeb-Bold.eot");
+  src: url("font/TitilliumWeb-Bold.eot?#iefix") format("embedded-opentype"),
+    url("font/TitilliumWeb-Bold.ttf") format("truetype"),
+    url("font/TitilliumWeb-Bold.svg#TitilliumWeb-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  /* --font-family: charter, Georgia, Cambria, 'Times New Roman', Times, serif; */
+  --font-family: "Titillium Web", Arial, sans-serif;
+  --text-color: #4d5060;
+  --code-color: #e4e4e4;
+  --orange-color: #fc8e08;
+  --max-width: 800px;
+  --padding: 20px;
+  --stroke-color: #505050;
+  --stroke-width: 0.5px;
+  --speed: 0.2s;
+  --white-color: #ffffff;
+  --btc-icon-size: 64px;
+  --menu-padding: 40px;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+html,
+body {
+  position: relative;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+body {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--padding);
+  opacity: 0;
+  transition: opacity var(--speed) ease-in-out;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+h1 {
+  margin-top: 32px;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: left;
+  font-size: large;
+  line-height: 1.5;
+  margin: 0;
+}
+
+a {
+  word-wrap: break-word;
+  color: var(--orange-color);
+}
+a:visited {
+  color: gray;
+}
+
+#tag {
+  position: relative;
+  margin: 0 auto;
+  bottom: var(--padding);
+}
+#tag a,
+#tag a:visited {
+  color: var(--text-color);
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+ol {
+  display: block;
+  list-style-type: none;
+  counter-reset: list;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 36px;
+}
+ol li:before {
+  counter-increment: list;
+  content: counters(list, ".") ") ";
+}
+
+ol.ref li:before {
+  content: "[" counters(list, ".") "] ";
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: var(--menu-padding);
+}
+
+li {
+  margin-bottom: 8px;
+  font-size: large;
+}
+
+pre {
+  background-color: var(--code-color);
+  overflow-x: scroll;
+}
+
+#menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  max-width: var(--max-width);
+  inset: 0;
+  pointer-events: none;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#menu-container {
+  pointer-events: initial;
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  transition: transform var(--speed) ease-in-out;
+  background-color: var(--white-color);
+}
+#menu-button {
+  pointer-events: initial;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  bottom: var(--padding);
+  right: var(--padding);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: var(--btc-icon-size);
+  height: var(--btc-icon-size);
+  opacity: 0.8;
+}
+#menu-button:active {
+  transform: scale(1.1);
+  opacity: 1;
+}
+.code {
+  line-height: 1.4;
+  font-size: larger;
+}
+.samp {
+  font-size: larger;
+}
+.tab {
+  margin-right: 10px;
+}
+@media screen and (max-width: 480px) {
+  :root {
+    --padding: 10px;
+    --btc-icon-size: 48px;
+    --menu-padding: 20px;
+  }
+}
